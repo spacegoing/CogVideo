@@ -1,4 +1,4 @@
-git+https://github.com/THUDM/SwissArmyTransformer.git
+git+https://github.com/spacegoing/SwissArmyTransformer.git
 diffusers>=0.29.2
 omegaconf>=2.3.0
 torch>=2.3.1
