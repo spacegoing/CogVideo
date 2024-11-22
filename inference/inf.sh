@@ -18,7 +18,7 @@ while IFS= read -r prompt || [[ -n "$prompt" ]]; do
     output_path="$OUTPUT_DIR/$order.mp4"
 
     # Run the Python script with the prompt and output path
-    python cli_demo.py --prompt "$prompt" --output_path "$output_path"
+    python my_cli_demo.py --prompt "$prompt" --output_path "$output_path"
 
     # Increment the order counter
     order=$((order + 1))
