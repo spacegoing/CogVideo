@@ -1499,6 +1499,7 @@ def main(args):
                     hidden_states=noisy_model_input,
                     encoder_hidden_states=prompt_embeds,
                     timestep=timesteps,
+                    ofs=torch.tensor([0.1]).type_as(noisy_model_input),
                     image_rotary_emb=image_rotary_emb,
                     return_dict=False,
                 )[0]
