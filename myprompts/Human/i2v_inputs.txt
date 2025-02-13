@@ -1,5 +1,5 @@
-/workspace/CogVideo/myprompts/Human/4.jpg:::DISNEY cool boy blinks naturally, the wind blows his hair
-/workspace/CogVideo/myprompts/Human/5.jpg:::DISNEY girl smiles brightly, lowered her hands
-/workspace/CogVideo/myprompts/Human/2.jpg:::DISNEY elegant man smiles, raise an eyebrow
-/workspace/CogVideo/myprompts/Human/3.png:::DISNEY girl disappointed, blinks
-/workspace/CogVideo/myprompts/Human/1.jpg:::DISNEY anime style ancient boy, slowly blink, robes gently move
+/workspace/CogVideo/myprompts/Human/1.jpg:::cool boy blinks naturally, the wind blows his hair
+/workspace/CogVideo/myprompts/Human/2.jpg:::girl smiles brightly, lowered her hands
+/workspace/CogVideo/myprompts/Human/3.png:::elegant man smiles, raise an eyebrow
+/workspace/CogVideo/myprompts/Human/4.jpg:::girl disappointed, blinks
+/workspace/CogVideo/myprompts/Human/5.jpg:::anime style ancient boy, slowly blink, robes gently move

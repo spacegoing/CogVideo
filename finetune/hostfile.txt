@@ -1,2 +1,2 @@
-node1 slots=8
-node2 slots=8
+leakdebug-copy5-master-0.default.svc slots=8
+leakdebug-copy5-worker-0.default.svc slots=8

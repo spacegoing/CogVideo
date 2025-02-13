@@ -531,7 +531,8 @@ class VideoDataset(Dataset):
             raise ValueError(
                 "Expected '--video_column' to be a path to a file in `--instance_data_root` containing line-separated paths to video data but found atleast one path that is not a valid file."
             )
-
+        # instance_prompts = instance_prompts[:10]
+        # instance_videos = instance_videos[:10]
         return instance_prompts, instance_videos
 
     def _preprocess_data(self):
@@ -1016,7 +1017,8 @@ def main(args):
     )
 
     vae = AutoencoderKLCogVideoX.from_pretrained(
-        args.pretrained_model_name_or_path, subfolder="vae", revision=args.revision, variant=args.variant
+        args.pretrained_model_name_or_path, subfolder="vae", revision=args.revision, variant=args.variant,
+        torch_dtype=load_dtype
     )
 
     scheduler = CogVideoXDPMScheduler.from_pretrained(args.pretrained_model_name_or_path, subfolder="scheduler")
@@ -1158,11 +1160,11 @@ def main(args):
 
     use_deepspeed_optimizer = (
         accelerator.state.deepspeed_plugin is not None
-        and accelerator.state.deepspeed_plugin.deepspeed_config.get("optimizer", "none").lower() == "none"
+        and accelerator.state.deepspeed_plugin.deepspeed_config.get("optimizer", "none").lower() != "none"
     )
     use_deepspeed_scheduler = (
         accelerator.state.deepspeed_plugin is not None
-        and accelerator.state.deepspeed_plugin.deepspeed_config.get("scheduler", "none").lower() == "none"
+        and accelerator.state.deepspeed_plugin.deepspeed_config.get("scheduler", "none").lower() != "none"
     )
 
     optimizer = get_optimizer(args, params_to_optimize, use_deepspeed=use_deepspeed_optimizer)

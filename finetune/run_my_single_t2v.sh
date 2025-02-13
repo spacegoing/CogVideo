@@ -7,7 +7,9 @@ export OUTPUT_PATH="cogvideox-lora-single-node"
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
 # if you are not using wth 8 gus, change `accelerate_config_machine_single.yaml` num_processes as your gpu number
-accelerate launch --config_file my_single_train.yaml --multi_gpu \
+accelerate launch --main_process_ip $MASTER_ADDR --main_process_port $MASTER_PORT \
+  --num_machines 1 --machine_rank $RANK --multi_gpu \
+  --config_file my_single_train.yaml \
   train_cogvideox_lora.py \
   --gradient_checkpointing \
   --pretrained_model_name_or_path $MODEL_PATH \
